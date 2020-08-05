@@ -9,23 +9,23 @@ setting the `divisor` member variable with 0 so that the `divide()` method
 will explode.
 
 Make a *single* code change such that the compiler will prevent him from bypassing
-the encapsulation. In other words, he will need to call the `setDivisor()` method 
+the encapsulation. In other words, he will need to call the `setDivisor()` method
 to set the `divisor` member variable.
 
 Questions:
 1) What did you learn from this exercise?
 */
 class SafeDivisor {
-    divisor: number = 1;
+    private divisor: number = 1;
 
     setDivisor(value: number) {
         if (value == 0) {
             throw new Error("Value should not be 0");
         }
-        this.divisor = value; 
+        this.divisor = value;
     }
 
-    divide(x: number): number { 
+    divide(x: number): number {
         return x / this.divisor;
     }
 }
@@ -33,6 +33,13 @@ class SafeDivisor {
 function exploit(): number {
     let sd = new SafeDivisor();
 
-    sd.divisor = 0;
-    return sd.divide(42); 
+    sd.setDivisor(0);  // should be fine now
+    return sd.divide(42);
 }
+
+console.log(exploit());
+
+/*
+Answers:
+1) Variable should be private if there is a setter present.
+*/
