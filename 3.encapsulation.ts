@@ -41,5 +41,5 @@ console.log(exploit());
 
 /*
 Answers:
-1) Variable should be private if there is a setter present.
+1) Variable should be private if there is a setter present. This was done to prevent logic skipping.
 */

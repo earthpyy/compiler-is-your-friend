@@ -24,6 +24,7 @@ console.log(safeDivide());
 
 /*
 Answers:
-1) It is because `x` has changed after checking its value not equals zero
-3) `const` variable declaration cannot change its value
+1) It is because `x` has changed after checking its value not equals zero.
+2) Change `let` to `const`
+3) `const` variable declaration cannot change its value after defined.
 */
