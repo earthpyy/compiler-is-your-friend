@@ -1,7 +1,7 @@
 /*
 Question #3: Composability
 
-For this problem, coding on your part is not required. Thinking and 
+For this problem, coding on your part is not required. Thinking and
 explaining your understanding is what's required.
 */
 
@@ -10,14 +10,14 @@ explaining your understanding is what's required.
 //
 function findFirstNegativeNumberNonComposable(numbers: number[]) : number | undefined {
     for (let i of numbers) {
-        if (i < 0) 
+        if (i < 0)
         return i;
     }
 }
 function findFirstOneCharacterStringNonComposable(strings: string[]) : string | undefined {
     for (let str of strings) {
         if (str.length == 1)
-         return str; 
+         return str;
     }
 }
 
@@ -27,7 +27,7 @@ implementation now with logging probably will look like this.
 */
 function findFirstNegativeNumberNonComposableWithLogging(numbers: number[]) : number | undefined {
     for (let i of numbers) {
-        if (i < 0) 
+        if (i < 0)
         return i;
     }
     console.error("No matching value found");
@@ -35,7 +35,7 @@ function findFirstNegativeNumberNonComposableWithLogging(numbers: number[]) : nu
 function findFirstOneCharacterStringNonComposableWithLogging(strings: string[]) : string | undefined {
     for (let str of strings) {
         if (str.length == 1)
-         return str; 
+         return str;
     }
     console.error("No matching value found");
 }
@@ -49,7 +49,7 @@ Now, I refactor the code such that it looks like this now.
 //
 function first<T>(range: T[], p: (elem: T) => boolean) : T | undefined {
     for (let elem of range) {
-        if (p (elem)) 
+        if (p (elem))
         return elem;
     }
     console.error("No matching value found");
@@ -69,4 +69,10 @@ Think. Compare and contrast the:
 Question:
 1) What did you learn from this problem? Why would we want to refactor the code to be
 like the Composable implementation?
+*/
+
+/*
+Answers:
+1) There are some duplicated logics (find first of something, log error if not found). This is not a DRY idea.
+   In conclusion, we should follow DRY idea by combining logics which are same (or similar) together to make it "composable".
 */
