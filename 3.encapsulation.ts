@@ -33,7 +33,7 @@ class SafeDivisor {
 function exploit(): number {
     let sd = new SafeDivisor();
 
-    sd.setDivisor(0);  // should be fine now
+    sd.setDivisor(0);  // runtime error
     return sd.divide(42);
 }
 
